@@ -1,0 +1,177 @@
+# Set modifier key
+set $mod Mod4
+
+# Font for i3 and i3bar
+font pango:Victor Mono 8
+
+# Autostart applications
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec --no-startup-id sh -c "sleep 1"
+exec --no-startup-id xsetroot -cursor_name left_ptr
+exec --no-startup-id ~/initSet.sh
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id blueman-applet
+exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom/picom.conf"
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblankexec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec feh --bg-scale ~/Pictures/wallpaperflare.com_wallpaper_green.jpg
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id udiskie --tray
+
+# Volume controls with i3status refresh
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+Shift+f exec --no-startup-id dolphin
+bindsym $mod+Shift+c exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=cadlkienfkclaiaibeoongdcgmdikeeg
+
+# Floating modifier
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Terminal
+set $term kitty
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+
+# Application launcher
+#bindsym Shift+space exec --no-startup-id rofi -show drun
+bindsym Shift+space exec --no-startup-id ~/Documents/dotfiles/ROFI/ROFI_THEME/rofi/files/launchers/type-5/launcher.sh
+
+# Window navigation (vim style + arrows)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split windows
+bindsym $mod+Shift+s split h
+bindsym $mod+Shift+v split v
+
+# Layout toggles
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+o workspace number $ws11
+bindsym $mod+p workspace number $ws12
+
+# Move containers to workspaces
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+o move container to workspace number $ws11
+bindsym $mod+Shift+p move container to workspace number $ws12
+
+# Config reload/restart
+#bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Logout prompt
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+
+# Resize mode
+mode "resize" {
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Colors
+set $bg_dark            #344940
+set $text_active        #c2ffcd
+set $text_dull          #ffffff
+set $text_light         #7fffd6
+set $accent_blue        #156a7e
+set $bg_block           #31342d
+set $urgent_red         #900000
+set $border_unfocused $text_light
+
+# i3bar configuration
+bar {
+    status_command i3blocks
+    workspace_buttons yes
+    font pango:Exo 2 Bold 12
+
+    #font pango:VictorMono Bold 12
+    position top
+    colors {
+        background         #000000
+        statusline         $text_active
+        separator          $text_active
+        focused_workspace       $bg_dark    #ffffff     $bg_dark
+        active_workspace        $bg_dark    $bg_dark    $text_dull
+        inactive_workspace      $bg_dark    $bg_block   $text_dull
+        urgent_workspace        #2f343a $bg_dark    $accent_blue
+    }
+    mode dock
+}
+
+# Window borders
+for_window [class=".*"] border pixel 1
+client.focused               #ebbcba #ebbcba #ebbcba #ebbcba
+client.urgent                #2f343a $urgent_red $text_light $urgent_red
+
+# Toggle i3bar
+bindsym $mod+Shift+b bar mode toggle

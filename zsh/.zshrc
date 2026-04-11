@@ -1,0 +1,74 @@
+# ───────────── History ─────────────
+HISTFILE=~/.zsh_history
+HISTSIZE=200000
+SAVEHIST=200000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+# ───────────── PATH ────────────────
+export PATH="$HOME/.local/bin:$PATH"
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# ───────────── Completion ──────────
+autoload -Uz compinit
+compinit -d ~/.zcompdump-$HOST
+#
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select
+## plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ───────────── Prompt ──────────────
+eval "$(oh-my-posh init zsh --config ~/Documents/dotfiles/oh-my-posh/oh-my-posh-theme/night-owl.omp.json)"
+
+# ───────────── Navigation ──────────
+eval "$(zoxide init zsh)"
+
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+# ───────────── Vim Mode ────────────
+bindkey -v
+
+# show mode indicator (INSERT / NORMAL)
+#function zle-keymap-select {
+#  if [[ $KEYMAP == vicmd ]]; then
+#    RPS1="-N-"
+#  else
+#    RPS1="-I-"
+#  fi
+#  zle reset-prompt
+#}
+#zle -N zle-keymap-select
+#
+#function zle-line-init {
+#  zle-keymap-select
+#}
+#zle -N zle-line-init
+
+# faster escape
+#bindkey -M viins 'jk' vi-cmd-mode
+
+# ───────────── History search ──────
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# ───────────── Aliases ─────────────
+alias cl='clear'
+alias ll='ls -l'
+alias reload='source ~/.zshrc'
+alias zshconfig='nvim ~/.zshrc'
+alias gitlog='git log --oneline'
+alias gits='git status'
+alias servenow='python3 -m http.server 8000'
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
