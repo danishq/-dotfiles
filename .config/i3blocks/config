@@ -30,9 +30,11 @@ INLABEL=↓
 OUTLABEL=↑
 
 [ip]
-label=<span color="#f9e7e7"><b>IPv4  </b></span>
+label=<span color="#f9e7e7"><b>󰈀  IPv4 </b></span>
 command=/home/dqure/.config/i3blocks/ip.sh
 interval=10
+markup=pango
+color=#f9e7e7
 
 [time]
 label=<span color="#f9e7e7"> </span>

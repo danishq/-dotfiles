@@ -1,20 +1,13 @@
 #!/usr/bin/env bash
 
-# detect active interface (ethernet or wifi)
-IF=$(ip route get 1.1.1.1 2>/dev/null | awk '{print $5; exit}')
+# detect active interface
+IF=$(ip -o -4 route show to default | awk '{print $5}' | head -n1)
 
-# get IP
-IP=$(ip -4 addr show "$IF" 2>/dev/null | awk '/inet / {print $2}' | cut -d/ -f1)
+# get IPv4 with subnet (CIDR format)
+IP=$(ip -o -4 addr show dev "$IF" | awk '{print $4}')
 
-# fallback if no connection
+# fallback
 [[ -z "$IP" ]] && IP="No IP"
 
-# icon based on interface
-if [[ "$IF" == wl* ]]; then
-  ICON=""
-else
-  ICON="󰈀"
-fi
-
-# fixed width output (15 chars)
-printf "<span font_family='JetBrainsMono Nerd Font'><b>%s %-10s</b></span> \n" "$ICON" "$IP"
+# fixed width so i3bar doesn't shift
+printf "%-18s\n" "$IP"
