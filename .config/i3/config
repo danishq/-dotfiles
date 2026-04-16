@@ -163,7 +163,7 @@ bar {
         focused_workspace       $bg_dark    #ffffff     $bg_dark
         active_workspace        $bg_dark    $bg_dark    $text_dull
         inactive_workspace      $bg_dark    $bg_block   $text_dull
-        urgent_workspace        #2f343a $bg_dark    $accent_blue
+        urgent_workspace        #2f343a     $bg_dark    $accent_blue
     }
     mode dock
 }
