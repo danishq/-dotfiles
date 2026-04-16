@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:Victor Mono 8
 
 # Autostart applications
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id sh -c "sleep 1"
 exec --no-startup-id xsetroot -cursor_name left_ptr
