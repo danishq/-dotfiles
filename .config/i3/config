@@ -30,6 +30,8 @@ bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; dolphin
 bindsym $mod+Shift+d exec ~/Documents/dotfiles/.config/scripts/ws12.sh
 bindsym $mod+b exec --no-startup-id "i3-msg workspace 6; brave
 bindsym $mod+Shift+c exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=cadlkienfkclaiaibeoongdcgmdikeeg
+bindsym $mod+t exec --no-startup-id scrot '%Y-%m-%d-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/$f'
+bindsym $mod+Shift+t exec --no-startup-id scrot -s '%Y-%m-%d-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/$f'
 
 # Floating modifier
 floating_modifier $mod
