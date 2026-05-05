@@ -26,7 +26,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $mod+Shift+f exec --no-startup-id dolphin
+bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; dolphin
+bindsym $mod+Shift+d exec ~/Documents/dotfiles/.config/scripts/ws12.sh
+bindsym $mod+b exec --no-startup-id "i3-msg workspace 6; brave
 bindsym $mod+Shift+c exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=cadlkienfkclaiaibeoongdcgmdikeeg
 
 # Floating modifier
