@@ -17,4 +17,4 @@ else
   icon="󰕾"
 fi
 
-printf "<span font_family='JetBrainsMono Nerd Font'><b>%s %3s%%</b></span>\n" "$icon" "$vol"
+printf "%s %3s%%\n" "$icon" "$vol"

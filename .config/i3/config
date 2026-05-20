@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for i3 and i3bar
-font pango:Victor Mono 8
+font pango:JetBrainsMono Nerd Mono 8
 
 # Autostart applications
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -15,7 +15,7 @@ exec --no-startup-id blueman-applet
 exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom/picom.conf"
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
-exec --no-startup-id xset s noblankexec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xset s noblank
 exec feh --bg-scale ~/Pictures/wallpaperflare.com_wallpaper_green.jpg
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id udiskie --tray
@@ -26,12 +26,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; dolphin
-bindsym $mod+Shift+d exec ~/Documents/dotfiles/.config/scripts/ws12.sh
-bindsym $mod+b exec --no-startup-id "i3-msg workspace 6; brave
-bindsym $mod+Shift+c exec --no-startup-id /opt/google/chrome/google-chrome --profile-directory=Default --app-id=cadlkienfkclaiaibeoongdcgmdikeeg
-bindsym $mod+t exec --no-startup-id scrot '%Y-%m-%d-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/$f'
-bindsym $mod+Shift+t exec --no-startup-id scrot -s '%Y-%m-%d-%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots/ && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/$f'
+bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; nautilus
+bindsym $mod+Shift+d exec ~/Documents/-dotfiles/.config/scripts/ws12.sh
+bindsym $mod+b exec --no-startup-id "i3-msg workspace 6; /opt/brave.com/brave/brave
+bindsym $mod+m exec --no-startup-id "i3-msg workspace 10; /opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=blgdilankhbcpipclgpdndahbehalgkh
+bindsym $mod+t exec --no-startup-id sh -c 'FILE=~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png && maim "$FILE" && xclip -selection clipboard -t image/png -i "$FILE"'
+bindsym $mod+Shift+t exec --no-startup-id sh -c 'FILE=~/Pictures/Screenshots/$(date +%Y-%m-%d-%H%M%S).png && maim -s -u "$FILE" && xclip -selection clipboard -t image/png -i "$FILE"'
 
 # Floating modifier
 floating_modifier $mod
@@ -43,8 +43,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # Application launcher
-#bindsym Shift+space exec --no-startup-id rofi -show drun
-bindsym Shift+space exec --no-startup-id ~/Documents/dotfiles/ROFI/ROFI_THEME/rofi/files/launchers/type-5/launcher.sh
+bindsym Shift+space exec --no-startup-id rofi -show drun
+#bindsym Shift+space exec --no-startup-id ~/dotConfigFiles/rofi/launchers/type-5/launcher.sh
 
 # Window navigation (vim style + arrows)
 bindsym $mod+h focus left
@@ -156,7 +156,7 @@ set $border_unfocused $text_light
 bar {
     status_command i3blocks
     workspace_buttons yes
-    font pango:Exo 2 Bold 12
+    font pango:JetBrainsMono Nerd Font 10
 
     #font pango:VictorMono Bold 12
     position top

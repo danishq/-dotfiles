@@ -1,0 +1,43 @@
+{
+  "layout": "splith",
+  "nodes": [
+    {
+      "swallows": [
+        {
+          "class": "^kitty$"
+        }
+      ]
+    },
+    {
+      "layout": "splitv",
+      "nodes": [
+        {
+          "swallows": [
+            {
+              "class": "^kitty$"
+            }
+          ]
+        },
+        {
+          "layout": "splith",
+          "nodes": [
+            {
+              "swallows": [
+                {
+                  "class": "^kitty$"
+                }
+              ]
+            },
+            {
+              "swallows": [
+                {
+                  "class": "^kitty$"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

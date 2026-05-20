@@ -1,40 +1,32 @@
-separator=true
-separator_block_width=12
-markup=pango
-
 [cpu]
-label= <span color="#f9e7e7">  CPU </span>
-command=/home/dqure/.config/i3blocks/cpu.sh
+label=
+command=/home/danish/.config/i3blocks/cpu.sh
 interval=2
 
 [memory]
-label= <span color="#f9e7e7">  RAM </span>
-command=/home/dqure/.config/i3blocks/memory.sh
+label=
+command=/home/danish/.config/i3blocks/memory.sh
 interval=3
 
 [disk]
-label= <span color="#f9e7e7">  Disk </span>
-command=/home/dqure/.config/i3blocks/disk.sh
+label=
+command=/home/danish/.config/i3blocks/disk.sh
 interval=60
 
 [volume]
-label=<span color="#f9e7e7"> Vol </span>
-command=/home/dqure/.config/i3blocks/volume.sh
+command=/home/danish/.config/i3blocks/volume.sh
 interval=1
 
 [bandwidth]
-label= <span color="#f9e7e7">   Net </span>
-command=/home/dqure/.config/i3blocks/bandwidth.sh
+label=
+command=/home/danish/.config/i3blocks/bandwidth.sh
 interval=1
-INLABEL=↓
-OUTLABEL=↑
 
 [ip]
-label=󰈀 <span color="#f9e7e7"><b> IPv4 </b></span>
-command=/home/dqure/.config/i3blocks/ip.sh
+label=󰈀
+command=/home/danish/.config/i3blocks/ip.sh
 interval=10
 
 [time]
-label=<span color="#f9e7e7"> </span>
-command=/home/dqure/.config/i3blocks/time.sh
+command=/home/danish/.config/i3blocks/time.sh
 interval=60

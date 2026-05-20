@@ -49,6 +49,6 @@ format_rate() {
   fi
 }
 
-printf "<span font_family='JetBrainsMono Nerd Font'><b>%s%s %s%s</b></span>\n" \
+printf " %s%s %s%s\n" \
   "$INLABEL" "$(format_rate $rx_kib)" \
   "$OUTLABEL" "$(format_rate $tx_kib)"

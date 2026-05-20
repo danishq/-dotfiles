@@ -21,11 +21,11 @@ compinit -d ~/.zcompdump-$HOST
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 ## plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ───────────── Prompt ──────────────
-eval "$(oh-my-posh init zsh --config ~/Documents/dotfiles/oh-my-posh/oh-my-posh-theme/night-owl.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/Documents/-dotfiles/oh-my-posh/oh-my-posh-theme/night-owl.omp.json)"
 
 # ───────────── Navigation ──────────
 eval "$(zoxide init zsh)"
@@ -88,3 +88,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 #unset __conda_setup
 # <<< conda initialize <<<
 
+
+# opencode
+export PATH=/home/danish/.opencode/bin:$PATH
