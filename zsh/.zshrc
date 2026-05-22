@@ -11,7 +11,10 @@ setopt HIST_SAVE_NO_DUPS
 
 # ───────────── PATH ────────────────
 export PATH="$HOME/.local/bin:$PATH"
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+#export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+export JAVA_HOME=/usr/lib/jvm/jdk-17.0.12-oracle-x64
 export PATH=$JAVA_HOME/bin:$PATH
 
 # ───────────── Completion ──────────
@@ -68,6 +71,7 @@ alias zshconfig='nvim ~/.zshrc'
 alias gitlog='git log --oneline'
 alias gits='git status'
 alias servenow='python3 -m http.server 8000'
+alias cal='ncal -b'
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

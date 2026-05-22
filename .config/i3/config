@@ -43,8 +43,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # Application launcher
-bindsym Shift+space exec --no-startup-id rofi -show drun
-#bindsym Shift+space exec --no-startup-id ~/dotConfigFiles/rofi/launchers/type-5/launcher.sh
+#bindsym Shift+space exec --no-startup-id rofi -show drun
+bindsym Shift+space exec --no-startup-id ~/Documents/-dotfiles/.config/rofi/files/launchers/type-2/launcher.sh
 
 # Window navigation (vim style + arrows)
 bindsym $mod+h focus left
