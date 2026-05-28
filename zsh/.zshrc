@@ -95,3 +95,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/home/danish/.opencode/bin:$PATH
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/snap/bin
