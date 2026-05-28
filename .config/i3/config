@@ -16,7 +16,7 @@ exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
-exec feh --bg-scale ~/Pictures/wallpaperflare.com_wallpaper_green.jpg
+exec feh --bg-scale ~/Downloads/pang-yuhao-wCi28eq8TF4-unsplash.jpg
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id udiskie --tray
 
@@ -26,7 +26,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; nautilus
+bindsym $mod+Shift+f exec --no-startup-id "i3-msg workspace 10; thunar
 bindsym $mod+Shift+d exec ~/Documents/-dotfiles/.config/scripts/ws12.sh
 bindsym $mod+b exec --no-startup-id "i3-msg workspace 6; /opt/brave.com/brave/brave
 bindsym $mod+m exec --no-startup-id "i3-msg workspace 10; /opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=blgdilankhbcpipclgpdndahbehalgkh
