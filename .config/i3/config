@@ -16,7 +16,7 @@ exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
-exec feh --bg-scale ~/Downloads/pang-yuhao-wCi28eq8TF4-unsplash.jpg
+exec feh --bg-scale ~/Downloads/kai-mason-Lhm-cVz9RzM-unsplash.jpg
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id udiskie --tray
 
@@ -144,12 +144,13 @@ bindsym $mod+r mode "resize"
 
 # Colors
 set $bg_dark            #344940
-set $text_active        #c2ffcd
+set $text_active        #B37F56
 set $text_dull          #ffffff
 set $text_light         #7fffd6
 set $accent_blue        #156a7e
 set $bg_block           #31342d
 set $urgent_red         #900000
+set $sepearator_color   #F6E2CE
 set $border_unfocused $text_light
 
 # i3bar configuration
@@ -159,12 +160,13 @@ bar {
     font pango:JetBrainsMono Nerd Font 10
 
     #font pango:VictorMono Bold 12
+    # background text border
     position top
     colors {
-        background         #000000
-        statusline         $text_active
-        separator          $text_active
-        focused_workspace       $bg_dark    #ffffff     $bg_dark
+        background         #382F27
+        statusline         $sepearator_color
+        separator          $sepearator_color
+        focused_workspace       #B37F56     #B37F56     #EFF1D2
         active_workspace        $bg_dark    $bg_dark    $text_dull
         inactive_workspace      $bg_dark    $bg_block   $text_dull
         urgent_workspace        #2f343a     $bg_dark    $accent_blue
