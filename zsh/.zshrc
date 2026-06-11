@@ -72,6 +72,8 @@ alias gitlog='git log --oneline'
 alias gits='git status'
 alias servenow='python3 -m http.server 8000'
 alias cal='ncal -b'
+alias gst='git stash push -m "poplater"'
+alias gsp='git stash pop'
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -97,3 +99,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/danish/.opencode/bin:$PATH
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/snap/bin
+
