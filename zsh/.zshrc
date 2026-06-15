@@ -99,4 +99,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/danish/.opencode/bin:$PATH
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/snap/bin
-
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/snapd/desktop"
