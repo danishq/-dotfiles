@@ -163,7 +163,7 @@ bar {
     # background text border
     position top
     colors {
-        background         #382F27
+        background         #15173D
         statusline         $sepearator_color
         separator          $sepearator_color
         focused_workspace       #B37F56     #B37F56     #EFF1D2
