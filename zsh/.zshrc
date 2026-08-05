@@ -14,7 +14,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
-export JAVA_HOME=/usr/lib/jvm/jdk-17.0.12-oracle-x64
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 
 # ───────────── Completion ──────────
@@ -41,23 +41,23 @@ setopt PUSHD_IGNORE_DUPS
 bindkey -v
 
 # show mode indicator (INSERT / NORMAL)
-#function zle-keymap-select {
-#  if [[ $KEYMAP == vicmd ]]; then
-#    RPS1="-N-"
-#  else
-#    RPS1="-I-"
-#  fi
-#  zle reset-prompt
-#}
-#zle -N zle-keymap-select
-#
-#function zle-line-init {
-#  zle-keymap-select
-#}
-#zle -N zle-line-init
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    RPS1="-N-"
+  else
+    RPS1="-I-"
+  fi
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-init {
+  zle-keymap-select
+}
+zle -N zle-line-init
 
 # faster escape
-#bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins 'jk' vi-cmd-mode
 
 # ───────────── History search ──────
 bindkey '^[[A' history-search-backward
@@ -101,3 +101,13 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/snap/bin
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/snapd/desktop"
 alias fd=fdfind
+export PATH="$HOME/develop/flutter/bin:$PATH"
+
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export HUSKY=0
