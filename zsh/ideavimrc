@@ -1,0 +1,154 @@
+" =========================
+"  General Settings
+" =========================
+sethandler <C-B> a:ide
+let mapleader = " "
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set scrolloff=5
+
+set number
+set relativenumber
+set surround
+
+" System clipboard
+set clipboard=unnamedplus
+
+
+" =========================
+"  Which-Key (requires IdeaVim-WhichKey plugin)
+" =========================
+Plug 'hugsy/ideavim-which-key'
+
+nnoremap <leader> :WhichKey '<leader>'<CR>
+
+
+" =========================
+"  Navigation / LSP-like
+" =========================
+nnoremap gb :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gy :action GotoTypeDeclaration<CR>
+nnoremap gD :action GotoSuperMethod<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap gR :action ShowUsages<CR>
+
+
+" =========================
+"  Marks & Jumps (Neovim-style)
+" =========================
+" Make jumps predictable
+nnoremap <C-o> <action>(Back)
+nnoremap <C-i> <action>(Forward)
+
+" Quick marks like Neovim
+nnoremap ' :action BookmarksNavigate<CR>
+nnoremap m :action ToggleBookmark<CR>
+
+" Show all marks (bookmarks)
+nnoremap <leader>m :action ShowBookmarks<CR>
+
+
+" =========================
+"  Splits / Window Management
+" =========================
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <leader>sc :action CloseEditor<CR>
+nnoremap <leader>so :action CloseOtherEditors<CR>
+
+" Move between splits like Vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+" =========================
+"  Tabs / Buffers
+" =========================
+nnoremap tl :action SelectNextTab<CR>
+nnoremap th :action SelectPreviousTab<CR>
+nnoremap tc :action CloseEditor<CR>
+nnoremap to :action CloseOtherEditors<CR>
+nnoremap tt :action ReopenClosedTab<CR>
+
+
+" =========================
+"  Search (Telescope-like)
+" =========================
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fg :action FindInPath<CR>
+nnoremap <leader>fs :action FileStructurePopup<CR>
+nnoremap <leader>sa :action SearchEverywhere<CR>
+
+
+" =========================
+"  Project / Explorer
+" =========================
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <leader>E :action HideAllWindows<CR>
+
+
+" =========================
+"  Code Actions / Refactor
+" =========================
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>fm :action ReformatCode<CR>
+nnoremap <leader>oi :action OptimizeImports<CR>
+
+" Auto-fix imports popup (off by default)
+set noimportpopup
+
+
+" =========================
+"  Running / Debugging
+" =========================
+nnoremap <leader>rr :action Run<CR>
+nnoremap <leader>rd :action Debug<CR>
+nnoremap <leader>rb :action BuildProject<CR>
+nnoremap <leader>ra :action RunAnything<CR>
+nnoremap <leader>rt :action RunClass<CR>
+
+" Breakpoints
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>dB :action ToggleMethodBreakpoint<CR>
+
+
+" =========================
+"  Git Integration
+" =========================
+nnoremap <leader>gs :action ActivateVersionControlToolWindow<CR>
+nnoremap <leader>gc :action CheckinProject<CR>
+nnoremap <leader>gp :action Git.Pull<CR>
+nnoremap <leader>gP :action Git.Push<CR>
+
+
+" =========================
+"  Comments
+" =========================
+nnoremap <leader>/ :action CommentByLineComment<CR>
+
+
+" =========================
+"  Terminal
+" =========================
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+
+" =========================
+"  Misc Quality of Life
+" =========================
+
+" Close annoying popups with ESC
+nnoremap <Esc> :action HideAllWindows<CR>
+
+" Focus mode / zen mode
+nnoremap <leader>zz :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>zF :action ToggleFullScreen<CR>
+nmap <Leader>sf <action>(com.mituuz.fuzzier.search.Fuzzier)
+nmap <Leader>sg <action>(com.mituuz.fuzzier.search.FuzzierVCS)
