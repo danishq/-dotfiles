@@ -29,4 +29,4 @@ interval=10
 
 [time]
 command=/home/danish/.config/i3blocks/time.sh
-interval=60
+interval=persist
