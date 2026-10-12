@@ -13,7 +13,7 @@
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/snapd/desktop"
 
-dir="$HOME/.config/rofi/launchers/type-2"
+dir="$HOME/.config/rofi/launchers/type-6"
 theme='style-4'
 
 ## Run
