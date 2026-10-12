@@ -74,6 +74,7 @@ alias servenow='python3 -m http.server 8000'
 alias cal='ncal -b'
 alias gst='git stash push -m "poplater"'
 alias gsp='git stash pop'
+alias mongosh='docker exec -it mongodb-local mongosh -u admin -p admin --authenticationDatabase admin'
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
