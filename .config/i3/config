@@ -143,39 +143,78 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Colors
-set $bg_dark            #344940
-set $text_active        #B37F56
-set $text_dull          #ffffff
-set $text_light         #7fffd6
-set $accent_blue        #156a7e
-set $bg_block           #31342d
-set $urgent_red         #900000
-set $sepearator_color   #F6E2CE
-set $border_unfocused $text_light
-set $wall #233630
-set $wall2 #15173d
+## Colors
+#set $bg_dark            #344940
+#set $text_active        #B37F56
+#set $text_dull          #ffffff
+#set $text_light         #7fffd6
+#set $accent_blue        #156a7e
+#set $bg_block           #31342d
+#set $urgent_red         #900000
+#set $sepearator_color   #F6E2CE
+#set $border_unfocused $text_light
+## set $wall #233630
+#set $wall #711c91
+#set $wall2 #15173d
+#
+## i3bar configuration
+#bar {
+#    status_command i3blocks
+#    workspace_buttons yes
+#    font pango:JetBrainsMono Nerd Font Bold 12
+#
+#    #font pango:VictorMono Bold 12
+#    # background text border
+#    position top
+#    colors {
+#        background         $wall 
+#        statusline         $sepearator_color
+#        separator          $sepearator_color
+#        focused_workspace       $wall2    $wall2    #EFF1D2
+#        #active_workspace        $bg_dark    $bg_dark    $text_dull
+#        active_workspace        $bg_dark    $bg_dark    $text_dull
+#        inactive_workspace      $wall $wall #ffffff
+#        urgent_workspace        #2f343a     $bg_dark    $accent_blue
+#    }
+#    mode dock
+#}
 
-# i3bar configuration
+## Colors — Cyberpunk Neon
+
+set $bg_dark            #0B0F1A
+set $text_active        #00F5FF
+set $text_dull          #E6F1FF
+set $text_light         #00F5FF
+set $accent_blue        #7B2CFF
+set $bg_block           #1A1B3A
+set $urgent_red         #FF1744
+set $sepearator_color   #FF00FF
+set $border_unfocused   #34365C
+
+set $wall               #0B0F1A
+set $wall2              #FF00FF
+
+## i3bar configuration
 bar {
     status_command i3blocks
     workspace_buttons yes
-    font pango:JetBrainsMono Nerd Font 10
+    font pango:JetBrainsMono Nerd Font Bold 12
 
-    #font pango:VictorMono Bold 12
-    # background text border
     position top
-    colors {
-        background         $wall 
-        statusline         $sepearator_color
-        separator          $sepearator_color
-        focused_workspace       $wall2    $wall2    #EFF1D2
-        active_workspace        $bg_dark    $bg_dark    $text_dull
-        inactive_workspace      $wall $wall #ffffff
-        urgent_workspace        #2f343a     $bg_dark    $accent_blue
-    }
     mode dock
+
+    colors {
+        background         $wall
+        statusline         $text_dull
+        separator          $sepearator_color
+
+        focused_workspace  $wall2    $wall2    #0B0F1A
+        active_workspace   $bg_dark  $bg_dark  $text_light
+        inactive_workspace $wall     $wall     #7B83B8
+        urgent_workspace   $urgent_red $urgent_red #FFFFFF
+    }
 }
+
 
 # Window borders
 for_window [class=".*"] border pixel 1
@@ -184,3 +223,4 @@ client.urgent                #2f343a $urgent_red $text_light $urgent_red
 
 # Toggle i3bar
 bindsym $mod+Shift+b bar mode toggle
+
