@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for i3 and i3bar
-font pango:JetBrainsMono Nerd Mono 8
+font pango: VictorMono Nerd Font 8
 
 # Autostart applications
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -17,7 +17,8 @@ exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
-exec feh --bg-scale ~/Downloads/kai-mason-Lhm-cVz9RzM-unsplash.jpg
+exec --no-startup-id /usr/bin/clipit
+exec feh --bg-scale ~/Pictures/wallpapers/4481890.jpg
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id udiskie --tray
 
@@ -198,7 +199,7 @@ set $wall2              #FF00FF
 bar {
     status_command i3blocks
     workspace_buttons yes
-    font pango:JetBrainsMono Nerd Font Bold 12
+    font pango: VictorMono Nerd Font 11
 
     position top
     mode dock

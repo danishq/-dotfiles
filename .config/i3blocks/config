@@ -1,32 +1,33 @@
 [cpu]
 label=
-command=/home/danish/.config/i3blocks/cpu.sh
+command=/home/dqure/.config/i3blocks/cpu.sh
 interval=2
 
 [memory]
 label=
-command=/home/danish/.config/i3blocks/memory.sh
+command=/home/dqure/.config/i3blocks/memory.sh
 interval=3
 
 [disk]
 label=
-command=/home/danish/.config/i3blocks/disk.sh
+command=/home/dqure/.config/i3blocks/disk.sh
 interval=60
 
 [volume]
-command=/home/danish/.config/i3blocks/volume.sh
+command=/home/dqure/.config/i3blocks/volume.sh
 interval=1
 
 [bandwidth]
 label=
-command=/home/danish/.config/i3blocks/bandwidth.sh
+command=/home/dqure/.config/i3blocks/bandwidth.sh
 interval=1
 
 [ip]
-label=󰈀
-command=/home/danish/.config/i3blocks/ip.sh
+label=󰈀 
+command=/home/dqure/.config/i3blocks/ip.sh
 interval=10
 
 [time]
-command=/home/danish/.config/i3blocks/time.sh
+command=/home/dqure/.config/i3blocks/time.sh
 interval=persist
+
